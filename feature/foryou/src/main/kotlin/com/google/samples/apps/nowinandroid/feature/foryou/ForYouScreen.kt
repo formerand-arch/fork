@@ -264,7 +264,7 @@ private fun LazyStaggeredGridScope.onboarding(
         OnboardingUiState.Loading,
         OnboardingUiState.LoadFailed,
         OnboardingUiState.NotShown,
-        -> Unit
+            -> Unit
 
         is OnboardingUiState.Shown -> {
             item(span = StaggeredGridItemSpan.FullLine, contentType = "onboarding") {
@@ -493,7 +493,7 @@ private fun feedItemsSize(
         OnboardingUiState.Loading,
         OnboardingUiState.LoadFailed,
         OnboardingUiState.NotShown,
-        -> 0
+            -> 0
 
         is OnboardingUiState.Shown -> 1
     }
@@ -617,3 +617,4 @@ fun ForYouScreenPopulatedAndLoading(
         )
     }
 }
+

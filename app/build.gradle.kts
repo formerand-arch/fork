@@ -70,21 +70,9 @@ android {
 }
 
 dependencies {
-    implementation(projects.feature.interests)
-    implementation(projects.feature.foryou)
-    implementation(projects.feature.bookmarks)
-    implementation(projects.feature.topic)
-    implementation(projects.feature.search)
-    implementation(projects.feature.settings)
+    implementation("mem.com:core:0.6.0")
 
-    implementation(projects.core.common)
-    implementation(projects.core.ui)
-    implementation(projects.core.designsystem)
-    implementation(projects.core.data)
-    implementation(projects.core.model)
-    implementation(projects.core.analytics)
     implementation(projects.sync.work)
-
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material3.adaptive)
@@ -103,6 +91,7 @@ dependencies {
     implementation(libs.kotlinx.coroutines.guava)
     implementation(libs.coil.kt)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.accompanist.permissions)
 
     ksp(libs.hilt.compiler)
 

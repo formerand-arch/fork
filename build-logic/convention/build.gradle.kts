@@ -114,5 +114,9 @@ gradlePlugin {
             id = libs.plugins.nowinandroid.jvm.library.get().pluginId
             implementationClass = "JvmLibraryConventionPlugin"
         }
+        register("sdk") {
+            id = "dikiySdk"
+            implementationClass = "SdkPlugin"
+        }
     }
 }

@@ -74,6 +74,15 @@ import com.google.samples.apps.nowinandroid.core.designsystem.theme.NiaTheme
 import com.google.samples.apps.nowinandroid.core.model.data.FollowableTopic
 import com.google.samples.apps.nowinandroid.core.model.data.NewsResource
 import com.google.samples.apps.nowinandroid.core.model.data.UserNewsResource
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.CoroutineName
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.job
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import kotlinx.datetime.Instant
 import kotlinx.datetime.toJavaInstant
 import kotlinx.datetime.toJavaZoneId
@@ -236,23 +245,146 @@ fun BookmarkButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    NiaIconToggleButton(
-        checked = isBookmarked,
-        onCheckedChange = { onClick() },
-        modifier = modifier,
-        icon = {
-            Icon(
-                imageVector = NiaIcons.BookmarkBorder,
-                contentDescription = stringResource(R.string.core_ui_bookmark),
-            )
-        },
-        checkedIcon = {
-            Icon(
-                imageVector = NiaIcons.Bookmark,
-                contentDescription = stringResource(R.string.core_ui_unbookmark),
-            )
-        },
-    )
+    Column(
+        modifier.fillMaxWidth()
+    ) {
+        NiaIconToggleButton(
+            checked = isBookmarked,
+            onCheckedChange = { onClick() },
+            modifier = modifier,
+            icon = {
+                Icon(
+                    imageVector = NiaIcons.BookmarkBorder,
+                    contentDescription = stringResource(R.string.core_ui_bookmark),
+                )
+            },
+            checkedIcon = {
+                Icon(
+                    imageVector = NiaIcons.Bookmark,
+                    contentDescription = stringResource(R.string.core_ui_unbookmark),
+                )
+            },
+        )
+        NiaIconToggleButton(
+            checked = isBookmarked,
+            onCheckedChange = { onClick() },
+            modifier = modifier,
+            icon = {
+                Icon(
+                    imageVector = NiaIcons.BookmarkBorder,
+                    contentDescription = stringResource(R.string.core_ui_bookmark),
+                )
+            },
+            checkedIcon = {
+                Icon(
+                    imageVector = NiaIcons.Bookmark,
+                    contentDescription = stringResource(R.string.core_ui_unbookmark),
+                )
+            },
+        )
+        NiaIconToggleButton(
+            checked = isBookmarked,
+            onCheckedChange = { onClick() },
+            modifier = modifier,
+            icon = {
+                Icon(
+                    imageVector = NiaIcons.BookmarkBorder,
+                    contentDescription = stringResource(R.string.core_ui_bookmark),
+                )
+            },
+            checkedIcon = {
+                Icon(
+                    imageVector = NiaIcons.Bookmark,
+                    contentDescription = stringResource(R.string.core_ui_unbookmark),
+                )
+            },
+        )
+        NiaIconToggleButton(
+            checked = isBookmarked,
+            onCheckedChange = { onClick() },
+            modifier = modifier,
+            icon = {
+                Icon(
+                    imageVector = NiaIcons.BookmarkBorder,
+                    contentDescription = stringResource(R.string.core_ui_bookmark),
+                )
+            },
+            checkedIcon = {
+                Icon(
+                    imageVector = NiaIcons.Bookmark,
+                    contentDescription = stringResource(R.string.core_ui_unbookmark),
+                )
+            },
+        )
+        NiaIconToggleButton(
+            checked = isBookmarked,
+            onCheckedChange = { onClick() },
+            modifier = modifier,
+            icon = {
+                Icon(
+                    imageVector = NiaIcons.BookmarkBorder,
+                    contentDescription = stringResource(R.string.core_ui_bookmark),
+                )
+            },
+            checkedIcon = {
+                Icon(
+                    imageVector = NiaIcons.Bookmark,
+                    contentDescription = stringResource(R.string.core_ui_unbookmark),
+                )
+            },
+        )
+        NiaIconToggleButton(
+            checked = isBookmarked,
+            onCheckedChange = { onClick() },
+            modifier = modifier,
+            icon = {
+                Icon(
+                    imageVector = NiaIcons.BookmarkBorder,
+                    contentDescription = stringResource(R.string.core_ui_bookmark),
+                )
+            },
+            checkedIcon = {
+                Icon(
+                    imageVector = NiaIcons.Bookmark,
+                    contentDescription = stringResource(R.string.core_ui_unbookmark),
+                )
+            },
+        )
+        NiaIconToggleButton(
+            checked = isBookmarked,
+            onCheckedChange = { onClick() },
+            modifier = modifier,
+            icon = {
+                Icon(
+                    imageVector = NiaIcons.BookmarkBorder,
+                    contentDescription = stringResource(R.string.core_ui_bookmark),
+                )
+            },
+            checkedIcon = {
+                Icon(
+                    imageVector = NiaIcons.Bookmark,
+                    contentDescription = stringResource(R.string.core_ui_unbookmark),
+                )
+            },
+        )
+        NiaIconToggleButton(
+            checked = isBookmarked,
+            onCheckedChange = { onClick() },
+            modifier = modifier,
+            icon = {
+                Icon(
+                    imageVector = NiaIcons.BookmarkBorder,
+                    contentDescription = stringResource(R.string.core_ui_bookmark),
+                )
+            },
+            checkedIcon = {
+                Icon(
+                    imageVector = NiaIcons.Bookmark,
+                    contentDescription = stringResource(R.string.core_ui_unbookmark),
+                )
+            },
+        )
+    }
 }
 
 @Composable

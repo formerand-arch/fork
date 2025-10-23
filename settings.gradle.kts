@@ -25,6 +25,7 @@ pluginManagement {
             }
         }
         mavenCentral()
+        mavenLocal()
         gradlePluginPortal()
     }
 }
@@ -39,6 +40,7 @@ dependencyResolutionManagement {
                 includeGroupByRegex("androidx.*")
             }
         }
+        mavenLocal()
         mavenCentral()
     }
 }
@@ -65,12 +67,7 @@ include(":core:screenshot-testing")
 include(":core:testing")
 include(":core:ui")
 
-include(":feature:foryou")
-include(":feature:interests")
-include(":feature:bookmarks")
-include(":feature:topic")
-include(":feature:search")
-include(":feature:settings")
+
 include(":lint")
 include(":sync:work")
 include(":sync:sync-test")
@@ -83,3 +80,4 @@ check(JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_17)) {
     https://developer.android.com/build/jdks#jdk-config-in-studio
     """.trimIndent()
 }
+include(":mylibrary")

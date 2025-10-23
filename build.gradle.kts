@@ -24,6 +24,12 @@ buildscript {
             }
         }
         mavenCentral()
+        maven {
+            setUrl("https://jitpack.io")
+            content {
+                includeGroup("com.github.aasitnikov")
+            }
+        }
 
         // This is used only for internal Google builds.
         maven { url = uri("../nowinandroid-prebuilts/m2repository") }
@@ -32,6 +38,8 @@ buildscript {
         classpath(libs.google.oss.licenses.plugin) {
             exclude(group = "com.google.protobuf")
         }
+        classpath("com.github.aasitnikov:fat-aar-android:1.4.4")
+
     }
 
 }
@@ -60,5 +68,6 @@ plugins {
     alias(libs.plugins.roborazzi) apply false
     alias(libs.plugins.secrets) apply false
     alias(libs.plugins.room) apply false
-    alias(libs.plugins.module.graph) apply true // Plugin applied to allow module graph generation
+    alias(libs.plugins.module.graph) apply true
+    alias(libs.plugins.kotlin.android) apply false // Plugin applied to allow module graph generation
 }

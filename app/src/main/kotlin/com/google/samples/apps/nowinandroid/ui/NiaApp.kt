@@ -73,7 +73,6 @@ import com.google.samples.apps.nowinandroid.feature.settings.SettingsDialog
 import com.google.samples.apps.nowinandroid.navigation.NiaNavHost
 import com.google.samples.apps.nowinandroid.navigation.TopLevelDestination
 import kotlin.reflect.KClass
-import com.google.samples.apps.nowinandroid.feature.settings.R as settingsR
 
 @Composable
 fun NiaApp(
@@ -210,11 +209,11 @@ internal fun NiaApp(
                         titleRes = destination.titleTextId,
                         navigationIcon = NiaIcons.Search,
                         navigationIconContentDescription = stringResource(
-                            id = settingsR.string.feature_settings_top_app_bar_navigation_icon_description,
+                            id = R.string.app_name,
                         ),
                         actionIcon = NiaIcons.Settings,
                         actionIconContentDescription = stringResource(
-                            id = settingsR.string.feature_settings_top_app_bar_action_icon_description,
+                            id = R.string.app_name,
                         ),
                         colors = TopAppBarDefaults.topAppBarColors(
                             containerColor = Color.Transparent,
