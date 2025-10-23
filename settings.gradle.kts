@@ -67,7 +67,12 @@ include(":core:screenshot-testing")
 include(":core:testing")
 include(":core:ui")
 
-
+include(":feature:foryou")
+include(":feature:interests")
+include(":feature:bookmarks")
+include(":feature:topic")
+include(":feature:search")
+include(":feature:settings")
 include(":lint")
 include(":sync:work")
 include(":sync:sync-test")

@@ -22,19 +22,15 @@ configurations.matching { it.name == "greaseDemoDebug" }.configureEach {
 }
 
 // Настройка для prodRelease
-configurations.matching { it.name == "greaseProdRelease" }.configureEach {
-    attributes {
-        attribute(ProductFlavorAttr.of("contentType"), objs.named("prod"))
-    }
-}
+
 
 dependencies {
-   /* grease(projects.feature.interests)
+    grease(projects.feature.interests)
     grease(projects.feature.foryou)
     grease(projects.feature.bookmarks)
     grease(projects.feature.topic)
     grease(projects.feature.search)
-    grease(projects.feature.settings)*/
+    grease(projects.feature.settings)
 
     grease(projects.core.common)
     grease(projects.core.ui)
@@ -44,6 +40,53 @@ dependencies {
     grease(projects.core.model)
     grease(projects.core.analytics)
     grease(projects.sync.work)
+
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.material3.adaptive)
+    implementation(libs.androidx.compose.material3.adaptive.layout)
+    implementation(libs.androidx.compose.material3.adaptive.navigation)
+    implementation(libs.androidx.compose.material3.windowSizeClass)
+    implementation(libs.androidx.compose.runtime.tracing)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.lifecycle.runtimeCompose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.profileinstaller)
+    implementation(libs.androidx.tracing.ktx)
+    implementation(libs.androidx.window.core)
+    implementation(libs.kotlinx.coroutines.guava)
+    implementation(libs.coil.kt)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.accompanist.permissions)
+
+    ksp(libs.hilt.compiler)
+
+    debugImplementation(libs.androidx.compose.ui.testManifest)
+    debugImplementation(projects.uiTestHiltManifest)
+
+    kspTest(libs.hilt.compiler)
+
+    testImplementation(projects.core.dataTest)
+    testImplementation(projects.core.datastoreTest)
+    testImplementation(libs.hilt.android.testing)
+    testImplementation(projects.sync.syncTest)
+    testImplementation(libs.kotlin.test)
+
+    testDemoImplementation(libs.androidx.navigation.testing)
+    testDemoImplementation(libs.robolectric)
+    testDemoImplementation(libs.roborazzi)
+    testDemoImplementation(projects.core.screenshotTesting)
+    testDemoImplementation(projects.core.testing)
+
+    androidTestImplementation(projects.core.testing)
+    androidTestImplementation(projects.core.dataTest)
+    androidTestImplementation(projects.core.datastoreTest)
+    androidTestImplementation(libs.androidx.test.espresso.core)
+    androidTestImplementation(libs.androidx.compose.ui.test)
+    androidTestImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.kotlin.test)
 }
 
 gradle.projectsEvaluated {
