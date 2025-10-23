@@ -60,5 +60,49 @@ plugins {
     alias(libs.plugins.roborazzi) apply false
     alias(libs.plugins.secrets) apply false
     alias(libs.plugins.room) apply false
-    alias(libs.plugins.module.graph) apply true // Plugin applied to allow module graph generation
+    alias(libs.plugins.module.graph) apply false // Plugin applied to allow module graph generation
+}
+
+subprojects {
+    apply(plugin = "maven-publish")
+
+    afterEvaluate {
+        plugins.withId("com.android.library") {
+            extensions.configure<PublishingExtension> {
+                publications {
+                    create<MavenPublication>("demoDebug") {
+                        println("bbff ${project.group}:${project.name}:0.1.0")
+                        groupId = project.group.toString()
+                        artifactId = project.name
+                        version = "0.1.0"
+
+                        afterEvaluate {
+                            from(components["demoDebug"])
+                        }
+
+                        pom {
+                            name.set("<YOUR_SDK_NAME>")
+                            description.set("<YOUR_SDK_DESCRIPTION>")
+                            url.set("<URL_TO_YOUR_SDK_OR_COMPANY>")
+                            developers {
+                                developer {
+                                    id.set("<OPTIONAL_DEVELOPER_ID>")
+                                    name.set("<OPTIONAL_DEVELOPER_NAME>")
+                                    email.set("<OPTIONAL_DEVELOPER_EMAIL>")
+                                }
+                            }
+                        }
+                    }
+                }
+
+                repositories {
+                    mavenLocal()
+                    maven {
+                        name ="maven-local"
+                        url = uri(rootProject.layout.buildDirectory.dir("maven-local"))
+                    }
+                }
+            }
+        }
+    }
 }

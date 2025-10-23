@@ -70,20 +70,26 @@ android {
 }
 
 dependencies {
-    implementation(projects.feature.interests)
-    implementation(projects.feature.foryou)
-    implementation(projects.feature.bookmarks)
-    implementation(projects.feature.topic)
-    implementation(projects.feature.search)
-    implementation(projects.feature.settings)
+    implementation("nowinandroid.feature:interests:0.1.0")
+    implementation("nowinandroid.feature:foryou:0.1.0")
+    implementation("nowinandroid.feature.bookmarks:impl:0.1.0")
+    implementation("nowinandroid.feature.bookmarks:api:0.1.0")
+    implementation("nowinandroid.feature:topic:0.1.0")
+    implementation("nowinandroid.feature:search:0.1.0")
+    implementation("nowinandroid.feature:settings:0.1.0")
+
+    implementation("nowinandroid.core:navigation:0.1.0")
+    implementation("nowinandroid.core:ui:0.1.0")
+    implementation("nowinandroid.core:designsystem:0.1.0")
+    implementation("nowinandroid.core:data:0.1.0")
+    implementation("nowinandroid.core:analytics:0.1.0")
+    implementation("nowinandroid.sync:work:0.1.0")
+
 
     implementation(projects.core.common)
-    implementation(projects.core.ui)
-    implementation(projects.core.designsystem)
-    implementation(projects.core.data)
     implementation(projects.core.model)
-    implementation(projects.core.analytics)
-    implementation(projects.sync.work)
+
+
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
