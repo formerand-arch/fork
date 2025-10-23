@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.nowinandroid.android.feature)
     alias(libs.plugins.nowinandroid.android.library.compose)
     id("io.deepmedia.tools.grease") version "0.3.7"
-    id("dikiySdk")
+    id("greaseSdkPlugin")
     `maven-publish`
 }
 
