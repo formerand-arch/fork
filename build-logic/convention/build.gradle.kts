@@ -115,7 +115,7 @@ gradlePlugin {
             implementationClass = "JvmLibraryConventionPlugin"
         }
         register("sdk") {
-            id = "dikiySdk"
+            id = "greaseSdkPlugin"
             implementationClass = "SdkPlugin"
         }
     }
